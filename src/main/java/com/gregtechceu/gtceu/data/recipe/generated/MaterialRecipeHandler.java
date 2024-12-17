@@ -318,7 +318,7 @@ public class MaterialRecipeHandler {
             }
         }
 
-        if (material.hasFluid()) {
+        if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_to_ingot")
                     .notConsumable(GTItems.SHAPE_MOLD_INGOT)
                     .inputFluids(material.getFluid(L))
@@ -485,7 +485,7 @@ public class MaterialRecipeHandler {
                     .category(GTRecipeCategories.INGOT_MOLDING)
                     .save(provider);
 
-            if (material.hasFluid()) {
+            if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
                 FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_to_nugget")
                         .notConsumable(GTItems.SHAPE_MOLD_NUGGET)
                         .inputFluids(material.getFluid(L))
@@ -535,7 +535,7 @@ public class MaterialRecipeHandler {
         ItemStack blockStack = ChemicalHelper.get(blockPrefix, material.hasFlag(IS_MAGNETIC) ?
                 material.getProperty(PropertyKey.INGOT).getMacerateInto() : material);
         long materialAmount = blockPrefix.getMaterialAmount(material);
-        if (material.hasFluid()) {
+        if (material.hasFluid()&& !material.hasFlag(NO_SOLIDIFYING)) {
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_block")
                     .notConsumable(GTItems.SHAPE_MOLD_BLOCK)
                     .inputFluids(material.getFluid((int) (materialAmount * L / M)))
