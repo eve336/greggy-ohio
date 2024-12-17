@@ -535,7 +535,7 @@ public class MaterialRecipeHandler {
         ItemStack blockStack = ChemicalHelper.get(blockPrefix, material.hasFlag(IS_MAGNETIC) ?
                 material.getProperty(PropertyKey.INGOT).getMacerateInto() : material);
         long materialAmount = blockPrefix.getMaterialAmount(material);
-        if (material.hasFluid()&& !material.hasFlag(NO_SOLIDIFYING)) {
+        if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_block")
                     .notConsumable(GTItems.SHAPE_MOLD_BLOCK)
                     .inputFluids(material.getFluid((int) (materialAmount * L / M)))

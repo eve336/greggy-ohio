@@ -206,7 +206,7 @@ public class PartsRecipeHandler {
             }
         }
 
-        if (material.hasFluid()&& !material.hasFlag(NO_SOLIDIFYING)) {
+        if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
             boolean isSmall = gearPrefix == gearSmall;
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_" + gearPrefix.name)
                     .notConsumable(isSmall ? GTItems.SHAPE_MOLD_GEAR_SMALL : GTItems.SHAPE_MOLD_GEAR)
@@ -279,7 +279,7 @@ public class PartsRecipeHandler {
 
     public static void processPlate(TagPrefix platePrefix, Material material, DustProperty property,
                                     Consumer<FinishedRecipe> provider) {
-        if (material.hasFluid()&& !material.hasFlag(NO_SOLIDIFYING)) {
+        if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_to_plate")
                     .notConsumable(GTItems.SHAPE_MOLD_PLATE)
                     .inputFluids(material.getFluid(L))
@@ -405,7 +405,7 @@ public class PartsRecipeHandler {
                 'S', new UnificationEntry(screw, material),
                 'R', new UnificationEntry(ring, material));
 
-        if (material.hasFluid()&& !material.hasFlag(NO_SOLIDIFYING)) {
+        if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_to_rotor")
                     .notConsumable(GTItems.SHAPE_MOLD_ROTOR)
                     .inputFluids(material.getFluid(L * 4))
