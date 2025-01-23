@@ -315,7 +315,7 @@ public class MaterialRecipeHandler {
             }
         }
 
-        if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
+        if (material.hasFluid()) {
             FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_to_ingot")
                     .notConsumable(GTItems.SHAPE_MOLD_INGOT)
                     .inputFluids(material.getFluid(L))
@@ -482,7 +482,7 @@ public class MaterialRecipeHandler {
                     .category(GTRecipeCategories.INGOT_MOLDING)
                     .save(provider);
 
-            if (material.hasFluid() && !material.hasFlag(NO_SOLIDIFYING)) {
+            if (material.hasFluid()) {
                 FLUID_SOLIDFICATION_RECIPES.recipeBuilder("solidify_" + material.getName() + "_to_nugget")
                         .notConsumable(GTItems.SHAPE_MOLD_NUGGET)
                         .inputFluids(material.getFluid(L))

@@ -165,7 +165,7 @@ public class RecyclingRecipes {
             if (m.hasProperty(PropertyKey.INGOT) && m.getProperty(PropertyKey.INGOT).getMacerateInto() != m) {
                 m = m.getProperty(PropertyKey.INGOT).getMacerateInto();
             }
-            if (!m.hasProperty(PropertyKey.FLUID) || m.getFluid() == null || m.hasFlag(NO_EXTRACTING)) {
+            if (!m.hasProperty(PropertyKey.FLUID) || m.getFluid() == null) {
                 return;
             }
             if (prefix == TagPrefix.dust && m.hasProperty(PropertyKey.BLAST)) {
