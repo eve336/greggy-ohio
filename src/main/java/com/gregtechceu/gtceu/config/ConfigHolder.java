@@ -495,6 +495,7 @@ public class ConfigHolder {
         @Configurable.Comment({ "What Kind of material should the bedrock ore miner output?", "Default: \"raw\"" })
         public String bedrockOreDropTagPrefix = "raw";
         @Configurable
+        @Configurable.Range(min = 120, max = 800)
         @Configurable.Comment({ "The base amount of ticks per block for electric singleblock ore miners",
                 "Default: 320" })
         public int minerSpeed = 320;
