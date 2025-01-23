@@ -396,7 +396,8 @@ public class GTMachines {
             LV, MV, HV, EV);
 
     public static final MachineDefinition[] MINER = registerTieredMachines("miner",
-            (holder, tier) -> new MinerMachine(holder, tier, ConfigHolder.INSTANCE.machines.minerSpeed / (tier * 2), tier * 8, tier),
+            (holder, tier) -> new MinerMachine(holder, tier, ConfigHolder.INSTANCE.machines.minerSpeed / (tier * 2),
+                    tier * 8, tier),
             (tier, builder) -> builder
                     .rotationState(RotationState.ALL)
                     .langValue("%s Miner %s".formatted(VLVH[tier], VLVT[tier]))
